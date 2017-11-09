@@ -1,0 +1,19 @@
+{
+"dataList":[
+{"link":"http://www.17jita.com/tab/img/7900.html","title":"《鲜活》吉他谱 马雨阳 G调高清谱（音艺乐器编配版）"},
+{"link":"http://www.17jita.com/tab/img/7899.html","title":"《七月上》吉他谱 Jam G调指法编配高清弹唱谱"},
+{"link":"http://www.17jita.com/tab/img/7898.html","title":"《都选C》吉他谱 大鹏 D调中级版（酷音小伟编配）"},
+{"link":"http://www.17jita.com/tab/img/7897.html","title":"《都选C》吉他谱 大鹏 C调简单版（酷音小伟吉他弹唱教学）"},
+{"link":"http://www.17jita.com/tab/img/7896.html","title":"梦中的哈德森吉他谱 赵雷 C调高清弹唱谱"},
+{"link":"http://www.17jita.com/tab/img/7895.html","title":"《人家》吉他谱 赵雷 D调指法编配原味编配"},
+{"link":"http://www.17jita.com/tab/img/7894.html","title":"《白羊》吉他谱 徐秉龙 / 沈以诚 原版编配（音乐乐器）"},
+{"link":"http://www.17jita.com/tab/img/7893.html","title":"和你在一起吉他谱 李志 G调高清原版编配"},
+{"link":"http://www.17jita.com/tab/img/7892.html","title":"未给姐姐递出的信吉他谱 赵雷 E调指法高清弹唱谱"},
+{"link":"http://www.17jita.com/tab/img/7891.html","title":"《遗憾》吉他谱 薛之谦 G调唯音悦吉他社编配"},
+{"link":"http://www.17jita.com/tab/img/7890.html","title":"《夜的钢琴曲》5吉他谱 指弹高清谱 张紫宇编配制作"},
+{"link":"http://www.17jita.com/tab/img/7889.html","title":"《前方》吉他谱 马雨阳 G调原版编配（音艺乐器）"},
+{"link":"http://www.17jita.com/tab/img/7888.html","title":"《小桥》吉他谱 暗杠 E调原版编配（音艺乐器版）"},
+{"link":"http://www.17jita.com/tab/img/7887.html","title":"《背影》吉他谱 赵雷 D调指法编配简单版"},
+{"link":"http://www.17jita.com/tab/img/7886.html","title":"同桌的你吉他谱 老狼 C调入门简单版适合新手（酷音小伟编配）"},
+]
+}
