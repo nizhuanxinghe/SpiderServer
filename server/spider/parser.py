@@ -34,11 +34,7 @@ class HtmlParser(object):
         data_list = soup.find('body', id="nv_portal") \
             .find('div', class_='bm_c xld').find_all('a', target="_blank")
 
-        i = 0
-        for a in data_list:
-            i = i + 1
-            print(i, "-", a.get('href'), "-", a.string)
-
         res_data['base_url'] = base_url
         res_data['data_list'] = data_list
+
         return res_data

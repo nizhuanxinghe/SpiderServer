@@ -2,5 +2,5 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'getGuitarSheet$', views.getGuitarSheet, name='getGuitarSheet')
+    url(r'getGuitarSheet', views.getGuitarSheet, name='getGuitarSheet')
 ]

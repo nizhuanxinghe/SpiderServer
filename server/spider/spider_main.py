@@ -9,11 +9,10 @@ class SpiderMain(object):
         self.parser = parser.HtmlParser()
         self.outputer = outputer.HtmlOutput()
         self.dataList = {}
-        self.root_url = ''
+        self.base_url = ''
 
     def craw(self, root_url):
         self.urls.add_new_url(root_url)
-        self.root_url = root_url
         # while self.urls.has_new_url():
         new_url = self.urls.get_new_url()
         html_cont = self.downloader.download(new_url)
@@ -21,34 +20,30 @@ class SpiderMain(object):
         self.urls.add_new_urls(new_urls)
 
         self.outputer.collect_data(new_data)
-        self.outputer.output_txt()
+        # self.outputer.output_txt()
 
-        # self.dataList.append(new_data['data_list'])
-        # if count == 1000:
-        #     break
+        self.base_url = new_data['base_url']
 
-        # count = count + 1
         self.saveSheetToSql(new_data)
 
         return self.packData(models.GuitarSheet.objects.all())
 
     def saveSheetToSql(self, datas):
         for obj in datas['data_list']:
-            link = '%s%s' % (self.root_url, obj.get('href'))
+            link = '%s%s' % (self.base_url, obj.get('href'))
             title = obj.string
             existGuitarSheets = models.GuitarSheet.objects.filter(link=link)
             if existGuitarSheets:
-                print('existGuitarSheets', existGuitarSheets)
                 continue
-            print('link:', link, ',title:', title, '\n')
+            # print('link:', link, ',title:', title, '\n')
             models.GuitarSheet.objects.create(link=link, title=title)
 
     def packData(self, datas):
-        print('packData:', datas)
+        # print('packData:', datas)
         jsonDict = {}
         dataList = []
         for obj in datas:
-            print('obj:', obj.link, obj.title)
+            # print('obj:', obj.link, obj.title)
             data = {}
             data['id'] = obj.id
             data['link'] = obj.link
