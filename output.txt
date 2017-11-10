@@ -1,5 +1,6 @@
 {
 "dataList":[
+{"link":"http://www.17jita.com/tab/img/7901.html","title":"静下来吉他谱 赵雷 C调指法编配"},
 {"link":"http://www.17jita.com/tab/img/7900.html","title":"《鲜活》吉他谱 马雨阳 G调高清谱（音艺乐器编配版）"},
 {"link":"http://www.17jita.com/tab/img/7899.html","title":"《七月上》吉他谱 Jam G调指法编配高清弹唱谱"},
 {"link":"http://www.17jita.com/tab/img/7898.html","title":"《都选C》吉他谱 大鹏 D调中级版（酷音小伟编配）"},
@@ -14,6 +15,5 @@
 {"link":"http://www.17jita.com/tab/img/7889.html","title":"《前方》吉他谱 马雨阳 G调原版编配（音艺乐器）"},
 {"link":"http://www.17jita.com/tab/img/7888.html","title":"《小桥》吉他谱 暗杠 E调原版编配（音艺乐器版）"},
 {"link":"http://www.17jita.com/tab/img/7887.html","title":"《背影》吉他谱 赵雷 D调指法编配简单版"},
-{"link":"http://www.17jita.com/tab/img/7886.html","title":"同桌的你吉他谱 老狼 C调入门简单版适合新手（酷音小伟编配）"},
 ]
 }
