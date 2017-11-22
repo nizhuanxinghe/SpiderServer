@@ -62,10 +62,15 @@ class HtmlParser(object):
             print(page.get('href'))
             page_url_list.append((page.get('href')))
 
+        obj_class = parser_conf['objClass']  # 'xi2'
+        obj_tab_class = parser_conf['objTagClass']
+        print('obj_class:', obj_class)
+        print('obj_tab_class:', obj_tab_class)
+
         data_list = []
         for pageUrl in page_url_list:
             content = BeautifulSoup(downloader.download(pageUrl), 'html.parser')
-            data_list = data_list + content.find('body').find_all(class_="xi2")
+            data_list = data_list + content.find('body').find(class_=obj_tab_class).find_all(class_=obj_class)
 
         print('data_list:', data_list)
         res_data['base_url'] = base_url

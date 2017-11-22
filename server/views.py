@@ -14,13 +14,19 @@ def getGuitarSheet(request):
         bodyStr = str(request.body, 'utf-8')
         jsonStr = urlparse.unquote(bodyStr)
         print("\n request.body:", jsonStr, "-", type(request))
-        data = json.loads(jsonStr[5:])
+        data = json.loads(jsonStr.split('=')[1].replace('+', ' '))
+        print('data:', data)
     else:
-        data['rootUrl'] = 'http://www.17jita.com'
-        data['urlTag'] = 'base'
-        data['pageTitle'] = '吉他谱'
-        data['pageClass'] = 'pg'
-        data['macAddress'] = 'aa.bb.cc.dd'
+        None
+    # data['macAddress'] = 'aa.bb.cc.dd'
+    # data['rootUrl'] = 'http://www.17jita.com'
+    # data['urlTag'] = 'base'
+    # data['pageTitle'] = '吉他谱'
+    # data['pageClass'] = 'pg'
+    # data['objClass'] = 'xi2'
+    # data['objTagClass'] = 'bm_c xld'
+
+
 
     # return None
     spider = spider_main.SpiderMain()
@@ -28,7 +34,7 @@ def getGuitarSheet(request):
     jsonDict = spider.craw(data)
 
     dataJson = json.dumps(jsonDict)
-    # print(dataJson)
+    print(dataJson)
     if request.method == 'GET':
         resp = HttpResponse(dataJson, content_type="application/json")
         return resp
