@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/spiderServer.iml" filepath="$PROJECT_DIR$/.idea/spiderServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SpiderServer.iml" filepath="$PROJECT_DIR$/.idea/SpiderServer.iml" />
     </modules>
   </component>
 </project>
