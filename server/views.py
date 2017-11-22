@@ -9,24 +9,32 @@ import urllib.parse as urlparse
 # Create your views here.
 
 def getGuitarSheet(request):
-    data = None
+    data = {}
     if request.body:
         bodyStr = str(request.body, 'utf-8')
         jsonStr = urlparse.unquote(bodyStr)
         print("\n request.body:", jsonStr, "-", type(request))
-        data = json.loads(jsonStr[5:])
+        data = json.loads(jsonStr.split('=')[1].replace('+', ' '))
+        print('data:', data)
+    else:
+        None
+    # data['macAddress'] = 'aa.bb.cc.dd'
+    # data['rootUrl'] = 'http://www.17jita.com'
+    # data['urlTag'] = 'base'
+    # data['pageTitle'] = '吉他谱'
+    # data['pageClass'] = 'pg'
+    # data['objClass'] = 'xi2'
+    # data['objTagClass'] = 'bm_c xld'
+
+
 
     # return None
     spider = spider_main.SpiderMain()
-    if data['rootUrl']:
-        root_url = data['rootUrl']
-    else:
-        root_url = "http://www.17jita.com/tab/"
 
-    jsonDict = spider.craw(root_url)
+    jsonDict = spider.craw(data)
 
     dataJson = json.dumps(jsonDict)
-    # print(dataJson)
+    print(dataJson)
     if request.method == 'GET':
         resp = HttpResponse(dataJson, content_type="application/json")
         return resp
