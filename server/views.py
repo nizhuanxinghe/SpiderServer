@@ -17,14 +17,14 @@ def getGuitarSheet(request):
         data = json.loads(jsonStr.split('=')[1].replace('+', ' '))
         print('data:', data)
     else:
-        None
-    # data['macAddress'] = 'aa.bb.cc.dd'
-    # data['rootUrl'] = 'http://www.17jita.com'
-    # data['urlTag'] = 'base'
-    # data['pageTitle'] = '吉他谱'
-    # data['pageClass'] = 'pg'
-    # data['objClass'] = 'xi2'
-    # data['objTagClass'] = 'bm_c xld'
+        data['macAddress'] = 'aa.bb.cc.dd'
+        data['rootUrl'] = 'http://www.17jita.com'
+        data['urlTag'] = 'base'
+        data['pageTitle'] = '吉他谱'
+        data['pageClass'] = 'pg'
+        data['objClass'] = 'xi2'
+        data['objTagClass'] = 'bm_c xld'
+        data['filter'] = ''
 
 
 
