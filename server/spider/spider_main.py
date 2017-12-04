@@ -10,12 +10,12 @@ class SpiderMain(object):
         self.outputer = outputer.HtmlOutput()
         self.base_url = ''
 
-    def craw(self, parser_conf):
-        self.urls.add_new_url(parser_conf['rootUrl'])
+    def craw(self, configParam):
+        self.urls.add_new_url(configParam.rootUrl)
         # while self.urls.has_new_url():
         new_url = self.urls.get_new_url()
         html_cont = self.downloader.download(new_url)
-        new_data = self.parser.parse(new_url, html_cont, parser_conf)
+        new_data = self.parser.parse(new_url, html_cont, configParam)
 
         self.outputer.collect_data(new_data)
         # self.outputer.output_txt()
@@ -24,7 +24,7 @@ class SpiderMain(object):
 
         if new_data['data_list']:
             self.saveSheetToSql(new_data)
-        return self.packData(models.GuitarSheet.objects.all(), parser_conf['filter'])
+        return self.packData(models.GuitarSheet.objects.all(), configParam.filter)
 
     def saveSheetToSql(self, datas):
         for obj in datas['data_list']:
