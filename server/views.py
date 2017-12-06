@@ -10,7 +10,6 @@ from . import models
 # Create your views here.
 
 def getGuitarSheet(request):
-    data = {}
     configParam = models.ConfigParam()
     if request.body:
         bodyStr = str(request.body, 'utf-8')
@@ -36,11 +35,12 @@ def getGuitarSheet(request):
         configParam.objClass = 'xi2'
         configParam.objTagClass = 'bm_c xld'
         configParam.filter = ''
+        configParam.action = 'ACTION_GET_SHEET'
 
     configParam.save()
 
     # return None
-    spider = spider_main.SpiderMain()
+    spider = spider_main.SpiderManager()
 
     jsonDict = spider.craw(configParam)
 
@@ -52,3 +52,32 @@ def getGuitarSheet(request):
     else:
         resp = HttpResponse(dataJson, content_type="application/json")
         return resp
+
+
+def getSheetImg(request):
+    configParam = models.ConfigParam()
+    if request.body:
+        bodyStr = str(request.body, 'utf-8')
+        jsonStr = urlparse.unquote(bodyStr)
+        data = json.loads(jsonStr.split('=')[1].replace('+', ' '))
+        configParam.rootUrl = data['rootUrl']
+        configParam.macAddress = data['macAddress']
+        configParam.action = data['action']
+        configParam.save()
+        if not configParam.rootUrl:
+            return HttpResponse('url is null！', content_type="application/text")
+    else:
+        return HttpResponse('request body is null！', content_type="application/text")
+
+    spider = spider_main.SpiderManager()
+    jsonDict = spider.getImgLinks(configParam.rootUrl)
+    print(jsonDict)
+    if jsonDict:
+        dataJson = json.dumps(jsonDict)
+    else:
+        return HttpResponse('get nothing！', content_type="application/text")
+    if request.method == 'POST':
+        resp = HttpResponse(dataJson, content_type="application/json")
+        return resp
+    else:
+        return HttpResponse('illegal request！', content_type="application/json")

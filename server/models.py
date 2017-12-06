@@ -17,4 +17,10 @@ class ConfigParam(models.Model):
     objClass = models.TextField(null=False)
     objTagClass = models.TextField(null=False)
     filter = models.TextField(null=False)
+    action = models.TextField(null=False)
 
+
+class Picture(models.Model):
+    link = models.TextField(null=False)
+    picId = models.TextField(null=True)
+    title = models.TextField(null=True)
