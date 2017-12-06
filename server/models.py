@@ -7,7 +7,20 @@ class GuitarSheet(models.Model):
     link = models.TextField(null=False)
     title = models.TextField(null=False)
 
-    # def __str__(self):
-    #     return self
+
+class ConfigParam(models.Model):
+    macAddress = models.TextField(null=False)
+    rootUrl = models.TextField(null=False)
+    urlTag = models.TextField(null=False)
+    pageTitle = models.TextField(null=False)
+    pageClass = models.TextField(null=False)
+    objClass = models.TextField(null=False)
+    objTagClass = models.TextField(null=False)
+    filter = models.TextField(null=False)
+    action = models.TextField(null=False)
 
 
+class Picture(models.Model):
+    link = models.TextField(null=False)
+    picId = models.TextField(null=True)
+    title = models.TextField(null=True)
